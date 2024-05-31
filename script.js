@@ -1,115 +1,128 @@
-let list = document.getElementById("list")
-let fruits = [
-    {
-      name: "Mango",
-      title: "Phalon ka badshah",
-      types: ["Chounsa", "Sindhri", "Langra", "Anwaratol", "Almaas"],
-
-      image:
-        "https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8TWFuZ298ZW58MHx8MHx8fDA%3D",
-    },
-    {
-      name: "Watermelon",
-      title: "Garmi ka dushman",
-      types: ["Red Melon", "Green Melon"],
-      image:
-        "https://images.unsplash.com/photo-1621583441131-c8c190794970?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2F0ZXIlMjBtZWxvbnxlbnwwfHwwfHx8MA%3D%3D",
-    },
-    {
-      name: "Peach",
-      title: "Juicy Peach",
-      types: ["Swat Wala", "Quetta Wala"],
-      image:
-        "https://images.unsplash.com/photo-1629828874514-c1e5103f2150?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGVhY2h8ZW58MHx8MHx8fDA%3D",
-    },
-    {
-      name: "Cherry",
-      title: "Khoon banane wali",
-      types: ["Black Cherry", "Red Cherry"],
-      image:
-        "https://plus.unsplash.com/premium_photo-1688671921089-628b61dae149?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2hlcnJ5fGVufDB8fDB8fHww",
-    },
+let cardList= document.getElementById("cardList")
+let carArray = [
+  {
+    name: "Toyota Supra",
+    Price: "PKR- 1.53 Crore",
+    Mileage: "68-KM/L",
+    image: "https://imgd.aeplcdn.com/642x361/cw/ec/37988/Toyota-Etios-Cross-Exterior-146348.jpg?wm=1&q=80"
+  },
+  {
+    name: "BMW X7",
+    Price: "PKR- 2.9 Crore",
+    Mileage: "11-KM/L",
+    image: "https://stimg.cardekho.com/images/carexteriorimages/930x620/BMW/X7/10571/1689673096346/front-left-side-47.jpg"
+  },
+  {
+    name: "Audi Q8",
+    Price: "PKR- 3.3 Crore",
+    Mileage: "10-KM/L",
+    image: "https://cdn.motor1.com/images/mgl/mrY7q/s1/audi-q8-tfsi-e-quattro-2020.jpg"
+  },
+  {
+    name: "Mercedes-Benz",
+    Price: "PKR- 4.0 Crore",
+    Mileage: "6-KM/L",
+    image: "https://vehicle-images.dealerinspire.com/stock-images/thumbnails/large/chrome/6d51b5e5a23adfbfc8a751521dbdb1c4.png"
+  },
+  {
+    name: "Porsche Cayenne",
+    Price: "PKR- 2.75 Crore",
+    Mileage: "8-KM/L",
+    image: "https://editorial.pxcrush.net/carsales/general/editorial/porsche-cayenne-s-e-hybrid-6.jpg?width=1024&height=682"
+  },
+  {
+    name: "Land Range Rover",
+    Price: "PKR- 3.5 Crore",
+    Mileage: "9-KM/L",
+    image: "https://imgd-ct.aeplcdn.com/1056x660/n/cw/ec/107719/range-rover-exterior-left-front-three-quarter-37.jpeg?isig=0&q=80"
+  },
+  {
+    name: "Lexus LX",
+    Price: "PKR- 3.2 Crore",
+    Mileage: "6.5-KM/L",
+    image: "https://i.pinimg.com/originals/a2/59/c6/a259c6bec49f263e9066bcb15b8eab50.png"
+  },
+  {
+    name: "Ferrari Roma",
+    Price: "PKR- 5.0 Crore",
+    Mileage: "8-KM/L",
+    image: "https://oracleoftime.com/wp-content/uploads/2022/08/Ferrari-Roma-Review-%C2%A9-Photo-Max-Earey-5.jpg"
+  },
+  {
+    name: "Lamborghini Urus",
+    Price: "PKR- 6.0 Crore",
+    Mileage: "7-KM/L",
+    image: "https://c0.wallpaperflare.com/preview/796/118/508/lamborghini-urus-lamborghini-urus-sports-utility-vehicle.jpg"
+  },
+  {
+    name: "Tesla Model S",
+    Price: "PKR- 2.5 Crore",
+    Mileage: "104-KM/L",
+    image: "https://images.pexels.com/photos/11139552/pexels-photo-11139552.jpeg?cs=srgb&dl=pexels-adaptphotos-11139552.jpg&fm=jpg"
+  }
 ];
-  
-fruits.forEach(function (data, ind){
-    let element = `
-      <div class="lg:w-1/3  sm:w-1/2 p-4">
-      <div class="flex relative h-[250px]">
-        <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="${
-          data.image
-        }">
-        <div id = ${ind} class="px-8 py-10  relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-         <h2 class="tracking-widest text-xl title-font font-medium text-indigo-500 mb-1">${
-            data.name
-          }</h2>
-          <h1 class="title-font text-2xl font-medium text-gray-900 mb-3">${
-           data.title
-          }</h1>
-          <p class="leading-relaxed">${data.types.join(" , ")}</p>
-          <p class="leading-relaxed">${data.desc} </p>
-          <button class="updateBtn" onclick="updateDesc(this)">update</button>
-          <button class="dltBtn" onclick="dltDesc(this)">Delete</button>
-        </div>
+
+
+carArray.forEach(function(data , index){
+  let ele = `
+  <div class="wrapper">
+    <div class="banner-image"> <img src="${data.image}" alt=""> </div>
+        <h1> ${data.name}</h1>
+        <p>${data.Price}</p>
+       <p>${data.Mileage}</p>
+       <p>FEEDBACK</p>
+       <p id="${index}">${data.feed}</p>
+       <div class="button-wrapper"> 
+          <button class="btn outline" onclick="feedback(this)">FeedBack</button>
+          <button class="btn fill" onclick="delet(this)">Delete</button>
       </div>
-    </div>`
-    list.innerHTML += element
+        </div>
+       
+  </div>`
+  // console.log(element.parentElement.parentElement)
+  cardList.innerHTML += ele
 })
 
-function updateDesc(element){
-    // let editDes = prompt("Edit Your Description");
-    let index = element.parentElement.id;
-    fruits[index].desc = prompt("Desc")
-    list.innerHTML = ''
-    fruits.forEach(function (data, ind){
-        let element = `
-          <div class="lg:w-1/3  sm:w-1/2 p-4">
-          <div class="flex relative h-[250px]">
-            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="${
-              data.image
-            }">
-            <div id = ${ind} class="px-8 py-10  relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-             <h2 class="tracking-widest text-xl title-font font-medium text-indigo-500 mb-1">${
-                data.name
-              }</h2>
-              <h1 class="title-font text-2xl font-medium text-gray-900 mb-3">${
-               data.title
-              }</h1>
-              <p class="leading-relaxed">${data.types.join(" , ")}</p>
-              <p class="leading-relaxed">${data.desc} </p>
-              <button class="updateBtn" onclick="updateDesc(this)">update</button>
-              <button class="dltBtn" onclick="dltDesc(this)">Delete</button>
-            </div>
+function renderCarList() {
+  cardList.innerHTML = "";
+  carArray.forEach(function(data, index) {
+    let ele = `
+    <div class="wrapper">
+      <div class="banner-image"> <img src="${data.image}" alt=""> </div>
+          <h1> ${data.name}</h1>
+          <p>${data.Price}</p>
+         <p>${data.Mileage}</p>
+         <p>FEEDBACK</p>
+         <p id="${index}">${data.feed}</p>
+         <div class="button-wrapper"> 
+            <button class="btn outline" onclick="feedback(this)">FeedBack</button>
+            <button class="btn fill" onclick="delet(this)">Delete</button>
+        </div>
           </div>
-        </div>`
-        list.innerHTML += element
-    })
+         
+    </div>`;
+    cardList.innerHTML += ele;
+  });
+}
+
+function feedback(element){
+  let prom = prompt("Please Give Me Feedback")
+  let index = element.parentElement.previousElementSibling.id
+  carArray[index].feed = prom
+  
+  renderCarList()
+
+    console.log(element.parentElement.previousElementSibling , "carArray>" , carArray)
+    // console.log(carArray[index])
 }
 
 
-function dltFruits() {
-    list.innerHTML = '';
-    fruits.forEach(function (data, ind) {
-        let element = `
-            <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div class="flex relative h-[250px]">
-                    <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="${data.image}">
-                    <div id="${ind}" class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-                        <h2 class="tracking-widest text-xl title-font font-medium text-indigo-500 mb-1">${data.name}</h2>
-                        <h1 class="title-font text-2xl font-medium text-gray-900 mb-3">${data.title}</h1>
-                        <p class="leading-relaxed">${data.types.join(" , ")}</p>
-                        <p class="leading-relaxed">${data.desc}</p>
-                        <button class="updateBtn" onclick="updateDesc(this)">Update</button>
-                        <button class="dltBtn" onclick="dltDesc(this)">Delete</button>
-                    </div>
-                </div>
-            </div>`;
-        list.innerHTML += element;
-    });
-}
 
-function dltDesc(element){
-    let index = element.parentElement.id;
-    fruits.splice(index, 1);
-    dltFruits();
-}
+function delet(element){
+  let index = element.parentElement.previousElementSibling.id;
+  carArray.splice( index , 1 )
 
+  renderCarList()
+  console.log(carArray)
+}
+delet()
